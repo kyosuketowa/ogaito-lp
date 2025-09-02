@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <!-- ===== Meta / SEO / Social ===== -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>小垣内だんじり祭り｜参加する人を応援したい</title>
+  <meta name="description" content="だんじり参加費を、みんなの応援で下げたい。500円/1万円の2択。返礼はエンドクレジット掲載のみ。個人・お店・事業者どなたでも。">
+  <link rel="canonical" href="[公開URL]" />
+  <meta name="theme-color" content="#0b0b0c" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="小垣内だんじり祭り｜参加する人を応援したい" />
+  <meta property="og:description" content="参加したいを、参加できたへ。500円/1万円の2択。返礼はエンドクレジット掲載のみ。" />
+  <meta property="og:image" content="[OGP画像URL]" />
+  <meta property="og:url" content="[公開URL]" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Schema.org（DonateAction） -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"DonateAction",
+    "name":"小垣内だんじり祭り 応援",
+    "target":[
+      "https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G",
+      "[SQUARE_10000]"
+    ],
+    "recipient":{
+      "@type":"Organization",
+      "name":"小垣内参拾人組"
+    },
+    "description":"だんじり参加費を応援（500円 / 1万円）。返礼はYouTube総集編のエンドクレジット記名のみ。"
+  }
+  </script>
+
+  <!-- Fonts / Preconnect -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="images/hero-2024.webp" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- ===== Styles (Vanilla CSS) ===== -->
+  <style>
+    :root{
+      --bg:#f7f7f8; --ink:#111; --ink-2:#374151; --muted:#6b7280; --line:#e5e7eb; --brand:#0b0b0c;
+      --radius:18px; --max:880px; --safe: env(safe-area-inset-bottom);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:20px 16px 110px}
+    .vh{position:absolute;left:-9999px;top:auto;overflow:hidden}
+    /* Typography */
+    h1{font-size:clamp(24px,4.8vw,40px);line-height:1.2;margin:10px 0 6px}
+    h2{font-size:clamp(16px,3.6vw,22px);line-height:1.4;margin:4px 0 0;color:#1f2937;font-weight:700}
+    .muted{color:var(--muted)}
+    .lead{color:var(--ink-2);font-size:14px;margin:10px 0 0}
+
+    /* Components */
+    .hero{border:1px solid var(--line);background:#fff;border-radius:24px;padding:18px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+    .chip{padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid var(--line);background:#fff}
+    .chip.dark{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .kv{margin:14px 0 0;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+    .kv img{width:100%;height:auto;display:block}
+
+    .cta{display:grid;grid-template-columns:1fr;gap:10px;margin:16px 0 0}
+    .btn{height:56px;border-radius:14px;font-weight:800;display:flex;align-items:center;justify-content:center;text-decoration:none;letter-spacing:.02em}
+    .btn.primary{background:var(--brand);color:#fff}
+    .btn.secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+    .btn:active{transform:translateY(1px)}
+
+    .band{margin:16px 0 0;padding:14px;border-radius:18px;background:var(--brand);color:#fff}
+    .band p{margin:4px 0}
+    .band .sub{color:#cbd5e1;font-size:12px}
+
+    .grid-2{display:grid;gap:10px}
+    @media(min-width:620px){.grid-2{grid-template-columns:1fr 1fr}}
+
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card ol{margin:0;padding-left:18px}
+
+    /* Gallery */
+    .gallery{margin:20px 0 0;display:grid;gap:8px;grid-template-columns:repeat(2,1fr)}
+    @media(min-width:520px){.gallery{grid-template-columns:repeat(3,1fr)}}
+    .gallery a{display:block;position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff}
+    .gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;transition:transform .25s ease}
+    .gallery a:hover img{transform:scale(1.02)}
+
+    /* Lightbox */
+    dialog#lb{border:0;padding:0;background:rgba(0,0,0,.94)}
+    dialog#lb::backdrop{background:rgba(0,0,0,.6)}
+    .lb-wrap{position:relative;max-width:min(96vw,900px);margin:0 auto}
+    .lb-img{width:100%;height:auto;display:block}
+    .lb-close{position:fixed;top:12px;right:12px;padding:10px 12px;border-radius:12px;border:1px solid #ffffff55;background:#0009;color:#fff}
+
+    /* Sticky CTA */
+    .sticky{position:fixed;left:0;right:0;bottom:0;padding:8px max(16px,env(safe-area-inset-left)) calc(8px + var(--safe)) max(16px,env(safe-area-inset-right));background:#ffffffe6;border-top:1px solid var(--line);backdrop-filter:saturate(1.1) blur(6px)}
+    .sticky .row{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+
+    /* Animations (gentle) */
+    @media (prefers-reduced-motion:no-preference){
+      .fade{opacity:0;transform:translateY(6px);animation:fade .5s ease .05s forwards}
+      @keyframes fade{to{opacity:1;transform:none}}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="vh">本文へスキップ</a>
+  <main id="main" class="wrap">
+    <!-- ===== HERO（左寄せ・最上段） ===== -->
+    <section class="hero fade" aria-labelledby="title">
+      <p class="muted" style="font-size:12px;font-weight:700;">オガファン（小垣内参拾人組）</p>
+      <h1 id="title">小垣内だんじり祭りに、参加する人を応援したい。</h1>
+      <h2>参加したいを、参加できたへ。500円 / 1万円の2択。</h2>
+
+      <div class="chips">
+        <span class="chip dark">500円 / 1万円</span>
+        <span class="chip">返礼：エンドクレジット掲載のみ</span>
+        <span class="chip">名義自由（屋号・店名・本名・ニックネーム）</span>
+      </div>
+      <p class="lead">「祭りに参加したいけど、お金がない。」その一歩を、あなたの応援で軽くできます。</p>
+
+      <div class="cta" role="group" aria-label="応援を選ぶ">
+        <a class="btn primary" target="_blank" rel="noopener noreferrer"
+           href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G"
+           aria-label="500円で応援する（新しいタブで開く）">500円で応援する（1分）</a>
+        <a class="btn secondary" target="_blank" rel="noopener noreferrer"
+           href="[SQUARE_10000]" aria-label="1万円で応援する（新しいタブで開く）">1万円で応援する（1分）</a>
+      </div>
+
+      <figure class="kv" aria-label="祭りの写真（ヒーロー）">
+        <img src="images/hero-2024.webp" alt="小垣内だんじり祭りの集合写真" loading="eager" decoding="async">
+      </figure>
+    </section>
+
+    <!-- ===== 黒帯コピー ===== -->
+    <section class="band fade" aria-label="キーメッセージ">
+      <p style="font-weight:800;font-size:clamp(14px,3.8vw,18px)">あなたの500円／1万円が、今年の参加者をひとり増やす。</p>
+      <p class="sub">里帰りでも当日参加OK。参加費の負担を、みんなで軽く。</p>
+    </section>
+
+    <!-- ===== 参加のしかた（超ミニマル）＋ 動画 ===== -->
+    <section class="grid-2 fade" aria-label="参加のしかた">
+      <div class="card">
+        <h3>30秒で参加</h3>
+        <ol class="muted">
+          <li>リンク/QRを開く</li>
+          <li>掲載名を入力（全角10／半角15・絵文字不可）</li>
+          <li>カード決済（Square）→ 自動でYouTubeへ</li>
+        </ol>
+        <div class="cta" style="margin-top:10px;">
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://youtube.com/shorts/CXdXgtbL_co?si=w3keTRcJWJblgLWM">▶︎ 説明動画（60秒）</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>参加のハードル（要点だけ）</h3>
+        <ul class="muted" style="padding-left:18px;margin:0;">
+          <li>法被などコスチュームをそろえる費用</li>
+          <li>当日の飲食費 など</li>
+        </ul>
+        <p class="lead">物品返礼はありません。<strong>エンドクレジットに掲載名のみ</strong>を記載します。</p>
+      </div>
+    </section>
+
+    <!-- ===== 写真ギャラリー（ライトボックス） ===== -->
+    <section class="gallery fade" aria-label="写真ギャラリー">
+      <!-- サンプル：ファイルを images/ に置いてファイル名だけ差し替え -->
+      <a href="images/group-01@2x.webp"><img loading="lazy" src="images/group-01_720.webp"
+         srcset="images/group-01_480.webp 480w, images/group-01_720.webp 720w, images/group-01@2x.webp 1200w"
+         sizes="(max-width:520px) 50vw, 33vw" alt="集合写真：小垣内だんじり 2024"></a>
+      <a href="images/group-02@2x.webp"><img loading="lazy" src="images/group-02_720.webp"
+         srcset="images/group-02_480.webp 480w, images/group-02_720.webp 720w, images/group-02@2x.webp 1200w"
+         sizes="(max-width:520px) 50vw, 33vw" alt="巡行の様子"></a>
+      <a href="images/group-03@2x.webp"><img loading="lazy" src="images/group-03_720.webp"
+         srcset="images/group-03_480.webp 480w, images/group-03_720.webp 720w, images/group-03@2x.webp 1200w"
+         sizes="(max-width:520px) 50vw, 33vw" alt="掛け声と笑顔"></a>
+      <!-- 追加はこの <a>…</a> をコピペしてファイル名だけ増やせばOK -->
+    </section>
+
+    <!-- ===== フッター（法務） ===== -->
+    <section class="fade" style="margin-top:18px">
+      <p class="muted" style="font-size:12px;line-height:1.6">
+        決済：Square（カードのみ）／カード情報はSquareで安全処理・当方非保持。<br>
+        返礼：物品はありません。YouTube総集編のエンドクレジットに掲載名のみ記載します。
+      </p>
+      <p class="muted" style="font-size:11px;margin-top:8px">
+        特商法（抜粋）：事業者名：小垣内参拾人組（任意団体）／ 連絡先：[メール・電話] ／ 対価：応援（500円・1万円）／ 返品：役務につき不可
+      </p>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <dialog id="lb"><div class="lb-wrap"><img class="lb-img" alt=""></div><button class="lb-close" aria-label="閉じる">閉じる</button></dialog>
+
+  <!-- Sticky CTA（常時露出） -->
+  <nav class="sticky" aria-label="固定アクション">
+    <div class="row" role="group" aria-label="応援を選ぶ（固定）">
+      <a class="btn primary" target="_blank" rel="noopener"
+         href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">500円で応援</a>
+      <a class="btn secondary" target="_blank" rel="noopener" href="[SQUARE_10000]">1万円で応援</a>
+    </div>
+  </nav>
+
+  <!-- ===== Scripts (Lightbox / Share / Reveal) ===== -->
+  <script>
+    // Lightbox
+    const lb = document.getElementById('lb'), lbImg = lb.querySelector('.lb-img');
+    document.querySelectorAll('.gallery a').forEach(a=>{
+      a.addEventListener('click', e=>{ e.preventDefault(); lbImg.src=a.href; lb.showModal(); });
+    });
+    lb.addEventListener('click', e=>{ if(e.target===lb){ lb.close(); } });
+    lb.querySelector('.lb-close').addEventListener('click', ()=>lb.close());
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } }), {threshold:.15});
+    document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+
+    // Web Share API（対応端末のみ）
+    function sharePage(){
+      if(navigator.share){ navigator.share({title:document.title, text:"小垣内だんじり祭り｜参加する人を応援したい", url:location.href}); }
+    }
+  </script>
+</body>
+</html>
