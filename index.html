@@ -1,267 +1,166 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <title>小垣内だんじり祭り｜参加する人を応援したい</title>
-  <meta name="description" content="小垣内だんじり祭りにみんなが参加できるようにしたい。シンプルにお金が必要。個人様は500円／お店・事業者様は1万円。返礼はエンドクレジットにご希望の掲載名のみ。" />
-  <meta name="theme-color" content="#a40f20" />
-  <link rel="canonical" href="https://kyosuketowa.github.io/ogaito-lp/" />
-  <!-- OGP -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="小垣内だんじり祭り｜参加する人を応援したい" />
-  <meta property="og:description" content="小垣内だんじり祭りにみんなが参加できるようにしたい。個人様500円／お店・事業者様1万円。返礼はエンドクレジットのみ。" />
-  <meta property="og:image" content="https://kyosuketowa.github.io/ogaito-lp/images/DSC_5605.JPG" />
-  <meta property="og:url" content="https://kyosuketowa.github.io/ogaito-lp/" />
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"DonateAction",
-    "name":"小垣内だんじり祭り 応援",
-    "target":[
-      "https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G",
-      "https://square.link/u/8vknj3Tm"
-    ],
-    "recipient":{"@type":"Organization","name":"小垣内参拾人組"},
-    "description":"個人様500円／お店・事業者様1万円。返礼はエンドクレジット掲載名のみ（物品はご用意しません）。"
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>小垣内だんじり祭り｜みんなが参加できるように</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;800&display=swap" rel="stylesheet">
+<meta name="description" content="小垣内だんじり祭りにみんなが参加できるように。個人様は500円／お店・事業者様は1万円。返礼はエンドクレジットにご希望の掲載名のみ。">
+<style>
+  :root{
+    --ink:#0d0e10; --ink2:#e5e7eb; --muted:#cbd5e1;
+    --accent:#a40f20; --accent-ink:#fff; --pad:clamp(16px,5vw,36px);
+    --max:1040px;
   }
-  </script>
-  <!-- Fonts -->
-  <link rel="preload" as="image" href="images/DSC_5605.JPG">
-  <link rel="preload" as="image" href="images/DSC_5645.JPG">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <!-- Styles -->
-  <style>
-    :root{
-      --ink:#0b0b0c; --muted:#667085; --bg:#f7f7f8;
-      --line:#e6e7eb; --surface:#ffffff;
-      --accent:#a40f20; --accent-ink:#fff;
-      --radius:20px; --max:920px; --safe:env(safe-area-inset-bottom);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0; background:var(--bg); color:var(--ink);
-      font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    a{color:inherit;text-decoration:none}
-    :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
-    .wrap{max-width:var(--max);margin:0 auto}
-    .page{min-height:100dvh;display:flex;align-items:stretch;padding:20px 16px}
-    .in{width:100%;max-width:780px;margin:0 auto}
-    .card{background:var(--surface); border:1px solid var(--line); border-radius:24px; padding:18px; box-shadow:0 8px 24px rgba(16,24,40,.06)}
-    h1{font-size:clamp(24px,5vw,40px); line-height:1.16; letter-spacing:.005em; margin:8px 0 4px}
-    h2{font-size:clamp(16px,3.6vw,22px); font-weight:700; color:#1f2937; margin:4px 0 0; letter-spacing:.005em}
-    h3{font-size:20px; margin:0 0 10px; letter-spacing:.01em}
-    p.lead{font-size:14px; color:#374151; margin:10px 0 0}
-    .muted{color:var(--muted)}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 0}
-    .chip{padding:8px 12px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:12px; font-weight:700}
-    .chip.dark{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
-    .kv{margin:14px 0 0; border-radius:20px; overflow:hidden; position:relative; border:1px solid var(--line)}
-    .kv img{width:100%; height:auto; display:block; object-fit:cover; object-position:center; filter:saturate(1.06) contrast(1.03)}
-    .kv .overlay{position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.14), transparent 35%, transparent 65%, rgba(0,0,0,.10)); pointer-events:none}
-    .btn{height:52px; border-radius:14px; font-weight:800; display:flex; align-items:center; justify-content:center; border:1px solid var(--line); background:#fff; letter-spacing:.02em; transition:transform .12s ease, box-shadow .2s ease}
-    .btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
-    .btn.outline{background:#fff; color:var(--ink)}
-    .btn:active{transform:translateY(1px)}
-    .btn .arr{margin-left:.35em; display:inline-block; transform:translateY(1px)}
-    .btn .arr::after{content:"›"}
-    .band{background:var(--accent); color:#fff; border-radius:16px; padding:12px; margin-top:12px}
-    .band .sub{opacity:.88; font-size:12px}
-    .clean{margin:10px 0 0; padding-left:18px}
-    .clean li{margin:4px 0}
-    /* 悪循環図解 */
-    .eq{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:12px 0 8px}
-    .eq .pill{padding:8px 10px; border-radius:999px; background:#fff; border:1px solid var(--line); font-size:12px; font-weight:700; color:#0f172a}
-    .eq .arr{color:#94a3b8; font-weight:800; padding:0 2px}
-    /* ページ位置インジケータ */
-    .progress{position:fixed; right:10px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:8px; z-index:20}
-    .dot{width:7px; height:7px; border-radius:999px; background:#d1d5db; border:1px solid #cbd5e1; transition:all .25s ease}
-    .dot.on{background:var(--accent); border-color:var(--accent)}
-    /* やわらかい出現 */
-    @media (prefers-reduced-motion:no-preference){
-      .fade{opacity:0; transform:translateY(6px); animation:fade .45s ease .05s forwards}
-      @keyframes fade{to{opacity:1; transform:none}}
-    }
-  </style>
+  *{box-sizing:border-box}
+  html,body{height:100%} html{scroll-behavior:smooth}
+  body{
+    margin:0;background:#000;color:#fff;
+    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;text-decoration:none}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:10px}
+
+  /* ===== Full-screen sections ===== */
+  .screen{
+    min-height:100dvh; position:relative; display:flex; align-items:flex-end;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
+  }
+  .shade{
+    position:absolute; inset:0; z-index:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.48) 0%, rgba(0,0,0,.24) 38%, rgba(0,0,0,.46) 100%);
+  }
+  .wrap{
+    position:relative; z-index:1; width:100%; max-width:var(--max);
+    margin:0 auto; padding:var(--pad); display:flex; align-items:end;
+  }
+  .stack{max-width:760px}
+  .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--muted);font-weight:600;margin:0 0 6px}
+  h1{font-weight:800;font-size:clamp(28px,6vw,48px);line-height:1.1;margin:0 0 8px}
+  h2{font-weight:600;font-size:clamp(16px,3.6vw,22px);line-height:1.38;color:var(--ink2);margin:0}
+  .rule{width:64px;height:2px;background:linear-gradient(90deg,#fff,transparent);opacity:.7;margin:12px 0}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    height:50px;padding:0 18px;border-radius:14px;font-weight:800;letter-spacing:.01em;
+    border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;
+    backdrop-filter:saturate(1.2) blur(6px);transition:transform .12s ease, background .2s ease, border-color .2s ease;
+  }
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+  .btn:hover{transform:translateY(-1px)}
+  .chip{
+    display:inline-block;padding:.55em .9em;border-radius:999px;
+    border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);
+    font-size:12px;color:#e5e7eb;margin-right:8px;margin-top:6px
+  }
+  .meta{margin-top:10px;color:#e5e7eb;font-size:12px;opacity:.9}
+  @media (max-width:520px){ .stack{max-width:92%} }
+</style>
 </head>
 <body>
-  <!-- ページ位置インジケータ -->
-  <aside class="progress" aria-hidden="true">
-    <span class="dot on"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
-  </aside>
 
-  <main class="wrap">
-    <!-- Page 1：HERO -->
-    <section class="page" id="p1" aria-labelledby="t1">
-      <div class="in fade">
-        <article class="card">
-          <p class="muted" style="font-size:12px;font-weight:700">オガファン（小垣内参拾人組）</p>
-          <h1 id="t1">小垣内だんじり祭りにみんなが参加できるようにしたい</h1>
-          <h2>シンプルにお金が必要。<strong>個人様は500円</strong>／<strong>お店・事業者様（企業様）は1万円</strong>で、参加の原資を支えます。</h2>
-
-          <div class="chips">
-            <a class="chip dark" href="#p3">個人様 500円</a>
-            <a class="chip dark" href="#p4">お店・事業者様 1万円</a>
-            <span class="chip">返礼：エンドクレジットに<strong>ご希望の掲載名</strong></span>
-            <a class="chip" target="_blank" rel="noopener" href="https://youtube.com/@channka-channel?si=SgLXtrbyQuRG9Mpe">チャンカちゃんねる</a>
-          </div>
-
-          <p class="lead">「祭りに参加したいけど、お金がない。」— その一歩を、あなたの応援で軽くできます。</p>
-
-          <figure class="kv" aria-label="ヒーロー写真">
-            <img src="images/DSC_5605.JPG" alt="小垣内だんじりの集合写真（正面・掲げる手と笑顔）" loading="eager" decoding="async">
-            <i class="overlay" aria-hidden="true"></i>
-          </figure>
-
-          <div class="cta" role="group" aria-label="応援を選ぶ">
-            <a class="btn primary" target="_blank" rel="noopener"
-               href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">個人様（500円）で応援<span class="arr"></span></a>
-            <a class="btn outline" target="_blank" rel="noopener"
-               href="https://square.link/u/8vknj3Tm">お店・事業者様（1万円）で応援<span class="arr"></span></a>
-          </div>
-        </article>
+  <!-- 1｜HERO：見出しだけ（インパクト重視） -->
+  <section id="top" class="screen" style="background-image:url('images/DSC_5605.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">OGAITO DANJIRI</p>
+        <h1>小垣内だんじり祭りにみんなが参加できるようにしたい</h1>
+        <div class="rule"></div>
+        <div class="cta">
+          <a class="btn" href="#story">詳しく見る</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Page 2：STORY（悪循環→解決） -->
-    <section class="page" id="p2" aria-labelledby="t2">
-      <div class="in fade">
-        <article class="card">
-          <h3 id="t2">STORY｜悪循環を断ち切って、参加を増やす。</h3>
-
-          <!-- 悪循環の図解 -->
-          <div class="eq" aria-label="参加減と会費の悪循環">
-            <span class="pill">年々、参加者が減少</span><span class="arr">→</span>
-            <span class="pill">1人あたりの会費負担が増える</span><span class="arr">→</span>
-            <span class="pill">参加しづらくなる</span><span class="arr">→</span>
-            <span class="pill">さらに参加者が減る</span>
-          </div>
-          <p class="lead">この負の連鎖を切る一番の方法は、<strong>今、原資をみんなで用意すること</strong>。だから、シンプルにお金が必要です。</p>
-
-          <h3 style="margin-top:14px">なぜお金が必要？</h3>
-          <ul class="clean muted">
-            <li>参加飲食・熱中症対策（給水・氷・軽食・衛生）</li>
-            <li>コスチュームのリユース整備（法被・パッチ・足袋の補修/クリーニング/手配）</li>
-            <li>安全運用や保管の基本コスト</li>
-          </ul>
-
-          <figure class="kv" style="margin-top:14px">
-            <img src="images/DSC_5645.JPG" alt="纏を回す様子（躍動・青空）" loading="lazy" decoding="async">
-            <i class="overlay" aria-hidden="true"></i>
-          </figure>
-
-          <h3 style="margin-top:14px">人が増えると何ができる？</h3>
-          <ul class="clean muted">
-            <li><strong>会費/人が下がる</strong> → 参加のハードルが下がる</li>
-            <li><strong>里帰り・若手の“当日だけ参加”</strong>を後押しできる</li>
-            <li>休憩所・給水・安全体制を<strong>厚く</strong>できる</li>
-          </ul>
-
-          <div class="band">
-            <strong>人と人とが集まると、活気ができる。</strong>
-            <p class="sub">“参加したい”を“参加できた”へ。小さな後押しの積み上げで、来年の参加者も増えていく。</p>
-          </div>
-
-          <div class="cta" style="margin-top:12px">
-            <a class="btn primary" target="_blank" rel="noopener"
-               href="https://youtube.com/shorts/0F2ZLscSdIA?si=DQPVUAH64YK06xJN">寄付の説明動画を見る<span class="arr"></span></a>
-            <a class="btn outline" target="_blank" rel="noopener"
-               href="https://youtube.com/@channka-channel?si=SgLXtrbyQuRG9Mpe">チャンネルを見る<span class="arr"></span></a>
-          </div>
-        </article>
+  <!-- 2｜STORY：シンプルにお金が必要（悪循環を断つ） -->
+  <section id="story" class="screen" style="background-image:url('images/DSC_5645.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">STORY</p>
+        <h1>シンプルにお金が必要</h1>
+        <div class="rule"></div>
+        <h2>年々、参加者が減る → 会費/人が増える → さらに参加が減る。<br>今、原資をみんなで用意して<strong>この悪循環を断ち切る</strong>。</h2>
+        <div class="chip">給水・氷・軽食・衛生</div>
+        <div class="chip">法被・パッチ・足袋の整備</div>
+        <div class="chip">安全運営・保管</div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Page 3：個人様（500円） -->
-    <section class="page" id="p3" aria-labelledby="t3">
-      <div class="in fade">
-        <article class="card">
-          <h3 id="t3">FOR PERSONAL｜個人様の応援（500円）</h3>
-          <p class="lead">
-            ほんの少しの応援で、誰かの“参加したい”を“参加できた”へ。<br>
-            返礼は物品ではありません。<strong>エンドクレジットにご希望の掲載名</strong>のみ記載します。
-          </p>
-          <ul class="clean muted">
-            <li>名義は自由：本名／ニックネーム いずれも可</li>
-            <li>掲載名のルール：全角10／半角15以内・絵文字不可・公序良俗に反する表現は修正／伏字／非掲載</li>
-          </ul>
-
-          <!-- 個人様 情感カット -->
-          <figure class="kv" style="margin-top:12px">
-            <img src="images/DSC_5938.JPG" alt="参加者の表情と動き（個人の一歩）" loading="lazy" decoding="async">
-            <i class="overlay" aria-hidden="true"></i>
-          </figure>
-
-          <div class="cta" style="margin-top:14px">
-            <a class="btn primary" target="_blank" rel="noopener"
-               href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">個人様（500円）で応援<span class="arr"></span></a>
-            <a class="btn outline" href="#p4">お店・事業者様はこちら<span class="arr"></span></a>
-          </div>
-        </article>
+  <!-- 3｜PERSONAL：個人様 500円（この写真にこのメッセージのみ） -->
+  <section id="personal" class="screen" style="background-image:url('images/DSC_5938.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">FOR PERSONAL</p>
+        <h1>個人様 500円</h1>
+        <div class="rule"></div>
+        <h2>“参加したい”を“参加できた”へ。<br>返礼は物ではなく、エンドクレジットに<strong>ご希望の掲載名</strong>。</h2>
+        <div class="cta">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">個人様で応援する</a>
+          <a class="btn" href="#business">お店・事業者様はこちら</a>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Page 4：お店・事業者様（1万円） -->
-    <section class="page" id="p4" aria-labelledby="t4">
-      <div class="in fade">
-        <article class="card">
-          <h3 id="t4">FOR BUSINESS｜お店・事業者様（企業様）の応援（1万円）</h3>
-          <p class="lead">
-            屋号・店名で地域の「参加」を後押ししてください。<br>
-            返礼は物品ではありません。<strong>エンドクレジットにご希望の掲載名（屋号・店名）</strong>のみ記載します。
-          </p>
-          <ul class="clean muted">
-            <li>名義は自由：屋号・店名・個人名 いずれも可</li>
-            <li>掲載名のルール：全角10／半角15以内・絵文字不可・公序良俗に反する表現は修正／伏字／非掲載</li>
-          </ul>
-
-          <!-- 町並み×山車（地域の文脈） -->
-          <figure class="kv" style="margin-top:12px">
-            <img src="images/DSC_5859.JPG" alt="町並みと山車（地域とお店の風景）" loading="lazy" decoding="async">
-            <i class="overlay" aria-hidden="true"></i>
-          </figure>
-
-          <!-- ミニギャラリー（同ページ内／4ページ構成を維持） -->
-          <figure class="kv" style="margin-top:10px">
-            <img src="images/DSC_5767.JPG" alt="交差点を進む隊列（スケール感）" loading="lazy" decoding="async">
-          </figure>
-          <figure class="kv" style="margin-top:10px">
-            <img src="images/DSC_6022.JPG" alt="子ども達が綱を引く様子（未来へのバトン）" loading="lazy" decoding="async">
-          </figure>
-
-          <div class="cta" style="margin-top:14px">
-            <a class="btn primary" target="_blank" rel="noopener"
-               href="https://square.link/u/8vknj3Tm">お店・事業者様（1万円）で応援<span class="arr"></span></a>
-            <a class="btn outline" href="#p1">最初のページへ戻る<span class="arr"></span></a>
-          </div>
-
-          <p class="muted" style="font-size:12px; margin-top:12px">
-            決済：Square（カードのみ）／カード情報はSquareで安全処理・当方非保持。<br>
-            返礼は<strong>エンドクレジットの掲載名のみ</strong>（物品はご用意しません。目的からの乖離を避けるためです）。
-          </p>
-        </article>
+  <!-- 4｜BUSINESS：お店・事業者様 1万円（写真＝地域感） -->
+  <section id="business" class="screen" style="background-image:url('images/DSC_5859.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">FOR BUSINESS</p>
+        <h1>お店・事業者様 1万円</h1>
+        <div class="rule"></div>
+        <h2>屋号・店名で“参加”を後押し。<br>返礼は<strong>エンドクレジットの掲載名のみ</strong>（物品返礼は目的からの乖離を避けるため不採用）。</h2>
+        <div class="cta">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://square.link/u/8vknj3Tm">お店・事業者様で応援する</a>
+          <a class="btn" href="#impact">人が増えると？</a>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- ページ位置インジケータ制御 -->
-  <script>
-    const dots = document.querySelectorAll('.progress .dot');
-    const pages = [...document.querySelectorAll('.page')];
-    const io = new IntersectionObserver((es)=>{
-      es.forEach(e=>{
-        if(e.isIntersecting){
-          const i = pages.indexOf(e.target);
-          dots.forEach((d,idx)=>d.classList.toggle('on', idx===i));
-        }
-      });
-    }, {threshold:.55});
-    pages.forEach(p=>io.observe(p));
-  </script>
+  <!-- 5｜IMPACT：人が増えると何ができる？（スケール感の写真） -->
+  <section id="impact" class="screen" style="background-image:url('images/DSC_5767.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">IMPACT</p>
+        <h1>人が増えると、何ができる？</h1>
+        <div class="rule"></div>
+        <h2><strong>会費/人が下がる</strong> → 参加のハードルが下がる。<br>
+            <strong>里帰り・若手の“当日だけ参加”</strong>を後押し。<br>
+            休憩所・給水・安全体制を<strong>厚く</strong>できる。</h2>
+        <div class="cta">
+          <a class="btn" href="#personal">個人様 500円へ</a>
+          <a class="btn" href="#business">お店・事業者様 1万円へ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6｜FUTURE：人と人が集まると活気ができる（未来の写真） -->
+  <section id="future" class="screen" style="background-image:url('images/DSC_6022.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">FUTURE</p>
+        <h1>人と人とが集まると、活気ができる</h1>
+        <div class="rule"></div>
+        <h2>今年の一歩が、来年の「参加できた」を増やす。<br>小さな後押しの積み上げで、祭りは続いていく。</h2>
+        <div class="cta">
+          <a class="btn primary" target="_blank" rel="noopener" href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">個人様 500円</a>
+          <a class="btn primary" target="_blank" rel="noopener" href="https://square.link/u/8vknj3Tm">お店・事業者様 1万円</a>
+          <a class="btn" href="#top">最初へ戻る</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
