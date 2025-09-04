@@ -13,24 +13,30 @@
     --max:1040px; --pad:clamp(16px,5vw,36px);
   }
   *{box-sizing:border-box}
-  html,body{height:100%} html{scroll-behavior:smooth}
+  html,body{height:100%}
+  html{scroll-behavior:smooth}
   body{
     margin:0;background:#000;color:#fff;
     font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    /* スムーズな上下移動（スナップ） */
+    scroll-snap-type:y proximity;
+    overflow-x:hidden;
   }
   a{color:inherit;text-decoration:none}
   :focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:10px}
 
-  /* ===== Full-screen section ===== */
+  /* ===== Full-screen section（写真背景） ===== */
   .screen{
     min-height:100dvh; position:relative; display:flex; align-items:flex-end;
     background-size:cover; background-position:center; background-repeat:no-repeat;
+    scroll-snap-align:start; scroll-snap-stop:always;
+    content-visibility:auto; contain-intrinsic-size:1px 1000px;
   }
   .shade{
     position:absolute; inset:0; z-index:0;
-    /* 読みやすさを優先して濃度UP（前版より強め） */
-    background:linear-gradient(180deg, rgba(0,0,0,.58) 0%, rgba(0,0,0,.32) 40%, rgba(0,0,0,.58) 100%);
+    background:linear-gradient(180deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.36) 42%, rgba(0,0,0,.62) 100%);
+    will-change:opacity;
   }
   .wrap{
     position:relative; z-index:1; width:100%; max-width:var(--max);
@@ -40,18 +46,18 @@
   .eyebrow{letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--muted);font-weight:600;margin:0 0 6px}
   h1{
     font-weight:800;font-size:clamp(28px,6vw,48px);line-height:1.1;margin:0 0 10px;
-    text-shadow:0 1px 2px rgba(0,0,0,.7), 0 6px 28px rgba(0,0,0,.45);
+    text-shadow:0 1px 2px rgba(0,0,0,.75), 0 6px 28px rgba(0,0,0,.5);
   }
   h2{
-    font-weight:600;font-size:clamp(16px,3.6vw,22px);line-height:1.42;color:var(--ink2);margin:0;
-    text-shadow:0 1px 2px rgba(0,0,0,.6), 0 4px 22px rgba(0,0,0,.35);
+    font-weight:600;font-size:clamp(16px,3.6vw,22px);line-height:1.44;color:var(--ink2);margin:0;
+    text-shadow:0 1px 2px rgba(0,0,0,.65), 0 4px 22px rgba(0,0,0,.38);
   }
-  .rule{width:64px;height:2px;background:linear-gradient(90deg,#fff,transparent);opacity:.75;margin:12px 0}
+  .rule{width:64px;height:2px;background:linear-gradient(90deg,#fff,transparent);opacity:.8;margin:12px 0}
   .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
   .btn{
     display:inline-flex;align-items:center;justify-content:center;
     height:50px;padding:0 18px;border-radius:14px;font-weight:800;letter-spacing:.01em;
-    border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:#fff;
+    border:1px solid rgba(255,255,255,.30);background:rgba(255,255,255,.12);color:#fff;
     backdrop-filter:saturate(1.2) blur(6px);transition:transform .12s ease, background .2s ease, border-color .2s ease;
   }
   .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
@@ -64,25 +70,35 @@
   .meta{margin-top:10px;color:#e5e7eb;font-size:12px;opacity:.9}
   @media (max-width:520px){ .stack{max-width:92%} }
 
-  /* ===== Final（非写真）：明快な白地 ===== */
+  /* ===== Final（非写真）：スタイリッシュ背景＋明快2CTA ===== */
   .final{
-    min-height:100dvh; background:#fafbfc; color:#0b0b0c;
-    display:flex; align-items:center; padding:var(--pad)
+    min-height:100dvh; display:flex; align-items:center; padding:var(--pad);
+    background:
+      radial-gradient(700px 400px at -10% -10%, #ffffff 0%, #f3f5f9 60%, transparent 60%),
+      radial-gradient(900px 500px at 110% 10%, #f6f8fb 0%, #eef2f6 60%, transparent 60%),
+      repeating-linear-gradient(135deg, rgba(10,12,16,.03) 0 16px, rgba(10,12,16,.06) 16px 17px),
+      linear-gradient(180deg, #fafbfc, #f3f5f8);
+    color:#0b0b0c;
+    scroll-snap-align:start; scroll-snap-stop:always;
   }
   .final .box{
-    width:100%; max-width:760px; margin:0 auto; background:#fff; border:1px solid #e7e8ee;
-    border-radius:20px; padding:clamp(16px,4vw,28px);
-    box-shadow:0 8px 24px rgba(16,24,40,.06);
+    width:100%; max-width:800px; margin:0 auto; background:#fff; border:1px solid #e7e8ee;
+    border-radius:22px; padding:clamp(18px,4.2vw,32px);
+    box-shadow:0 10px 28px rgba(16,24,40,.08);
   }
-  .final h1{color:#0b0b0c; text-shadow:none}
-  .final p{color:#334155}
+  .final h1{color:#0b0b0c; text-shadow:none; font-size:clamp(24px,4.8vw,40px); line-height:1.16}
+  .final p{color:#334155; margin:10px 0 0}
+  .final .note{margin-top:10px; font-size:13px; color:#475569}
+  .final .cta{margin-top:16px}
   .final .btn{border:1px solid #e7e8ee; background:#fff; color:#0b0b0c}
   .final .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .tag{display:inline-flex;align-items:center;gap:8px;padding:.55em .9em;border-radius:999px;border:1px solid #e7e8ee;background:#fff;color:#0b0b0c;font-size:12px}
 </style>
 </head>
 <body>
 
-  <!-- 1｜HERO：見出し＋2CTA（寄付ボタン） -->
+  <!-- 1｜HERO：見出し＋2CTA（寄付） -->
   <section id="top" class="screen" style="background-image:url('images/DSC_5605.JPG')">
     <div class="shade"></div>
     <div class="wrap">
@@ -101,83 +117,104 @@
     </div>
   </section>
 
-  <!-- 2｜STORY：シンプルにお金が必要（悪循環を断つ） -->
+  <!-- 2｜STORY：悪循環を断つ -->
   <section id="story" class="screen" style="background-image:url('images/DSC_5645.JPG')">
     <div class="shade"></div>
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">STORY</p>
-        <h1>シンプルにお金が必要</h1>
+        <h1>祭りにはお金が必要</h1>
         <div class="rule"></div>
-        <h2>年々、参加者が減る → 会費/人が増える → さらに参加が減る。<br>
-            今、原資をみんなで用意して<strong>この悪循環を断ち切る</strong>。</h2>
+        <h2>年々、参加者が減る → 1人あたりの負担額が増加 → さらに参加が減る。<br>
+            <strong>この悪循環を断ち切りたいのです</strong>。</h2>
         <div class="chip">給水・氷・軽食・衛生</div>
         <div class="chip">法被・パッチ・足袋の整備</div>
-        <div class="chip">安全運営・保管</div>
+        <div class="chip">だんじり運営・保管</div>
       </div>
     </div>
   </section>
 
-  <!-- 3｜WHY：なぜ必要？（町並み＝文脈） -->
+  <!-- 3｜WHY：返礼は“掲載名のみ” -->
   <section id="why" class="screen" style="background-image:url('images/DSC_5859.JPG')">
     <div class="shade"></div>
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">WHY</p>
-        <h1>なぜお金が必要？</h1>
+        <h1>返礼品は？</h1>
         <div class="rule"></div>
-        <h2>参加に必要な最低限を、みんなで支えるため。<br>
-            返礼は物ではなく、エンドクレジットに<strong>ご希望の掲載名</strong>のみ。</h2>
+        <h2>応援をダイレクトに生かすため、返礼は物ではなく、<br>
+            YouTube総集編のエンドクレジットに<strong>ご希望の掲載名</strong>のみ。</h2>
       </div>
     </div>
   </section>
 
-  <!-- 4｜IMPACT：人が増えると何ができる？（スケール感） -->
+  <!-- 4｜IMPACT：資金が増えると何ができる？ -->
   <section id="impact" class="screen" style="background-image:url('images/DSC_5767.JPG')">
     <div class="shade"></div>
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">IMPACT</p>
-        <h1>人が増えると、何ができる？</h1>
+        <h1>資金が増えると何ができる？</h1>
         <div class="rule"></div>
-        <h2><strong>会費/人が下がる</strong> → 参加のハードルが下がる。<br>
-            <strong>里帰り・若手の“当日だけ参加”</strong>を後押し。<br>
-            休憩所・給水・安全体制を<strong>厚く</strong>できる。</h2>
+        <h2>会費が下がる。<br>
+            練習中の給水や備品。<br>
+            祭礼中の飲食費。<br>
+            法被やパッチなどのユニフォーム。</h2>
       </div>
     </div>
   </section>
 
-  <!-- 5｜LINKS：下のページにチャンネル／説明動画（寄付ボタンなし） -->
+  <!-- 5｜FUTURE：活気→こども達へ（※順番をFUTURE→MOREに修正） -->
+  <section id="future" class="screen" style="background-image:url('images/DSC_6022.JPG')">
+    <div class="shade"></div>
+    <div class="wrap">
+      <div class="stack">
+        <p class="eyebrow">FUTURE</p>
+        <h1>活気はバトンになる</h1>
+        <div class="rule"></div>
+        <h2>集う人が増えるほど、祭りは続く。今日の熱は、明日のこども達の「参加したい」へ。</h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6｜MORE：Instagram／チャンネル／説明動画（寄付ボタンなし／最終直前へ移動） -->
   <section id="links" class="screen" style="background-image:url('images/DSC_5938.JPG')">
     <div class="shade"></div>
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">MORE</p>
-        <h1>詳しい説明・動画はこちら</h1>
+        <h1>詳しい説明・動画・写真</h1>
         <div class="rule"></div>
-        <h2>チャンネルで活動の様子、ショート動画で寄付の流れを確認できます。</h2>
+        <h2>活動はInstagram、長めの様子はチャンネル、寄付の手順はショート動画で。</h2>
         <div class="cta">
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://www.instagram.com/ogaito30?igsh=MW8zdDN5MTJ0YTE2cA==">Instagram（@ogaito30）</a>
           <a class="btn" target="_blank" rel="noopener"
              href="https://youtube.com/@channka-channel?si=SgLXtrbyQuRG9Mpe">チャンカちゃんねる</a>
           <a class="btn" target="_blank" rel="noopener"
-             href="https://youtube.com/shorts/0F2ZLscSdIA?si=DQPVUAH64YK06xJN">寄付の説明動画を見る</a>
+             href="https://youtube.com/shorts/0F2ZLscSdIA?si=DQPVUAH64YK06xJN">寄付の説明動画</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 6｜FINAL：非写真・明快な2CTA（もう一度寄付ボタン） -->
+  <!-- 7｜FINAL：非写真・スタイリッシュ背景＋寄付先明記＋明快2CTA -->
   <section id="final" class="final">
     <div class="box">
-      <h1>いま、原資をみんなで。</h1>
+      <h1>あなたの応援が大きな活気につながります。</h1>
       <p>“参加したい”を“参加できた”へ。小さな後押しの積み上げで、来年の参加も増やしていく。</p>
-      <div class="cta" style="margin-top:14px">
+      <p class="note">寄付先：<strong>小垣内参拾人組（任意団体）</strong>／返礼は<strong>エンドクレジット掲載名のみ</strong></p>
+      <div class="cta">
         <a class="btn primary" target="_blank" rel="noopener"
            href="https://checkout.square.site/merchant/MLH8BEJHE16KT/checkout/OL5FOW73CPZI23TD2LO2YY7G">個人で寄付（500円）</a>
         <a class="btn primary" target="_blank" rel="noopener"
            href="https://square.link/u/8vknj3Tm">お店で寄付（1万円）</a>
       </div>
-      <p class="meta" style="color:#6b7280">返礼はエンドクレジットの掲載名のみ（物品返礼は目的からの乖離を避けるため不採用）</p>
+      <div class="links">
+        <span class="tag">Instagram: <a target="_blank" rel="noopener" href="https://www.instagram.com/ogaito30?igsh=MW8zdDN5MTJ0YTE2cA==">@ogaito30</a></span>
+        <span class="tag">YouTube: <a target="_blank" rel="noopener" href="https://youtube.com/@channka-channel?si=SgLXtrbyQuRG9Mpe">チャンカちゃんねる</a></span>
+        <span class="tag">寄付手順: <a target="_blank" rel="noopener" href="https://youtube.com/shorts/0F2ZLscSdIA?si=DQPVUAH64YK06xJN">ショート動画</a></span>
+      </div>
     </div>
   </section>
 
