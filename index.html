@@ -95,14 +95,17 @@
   .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
   .tag{display:inline-flex;align-items:center;gap:8px;padding:.55em .9em;border-radius:999px;border:1px solid #e7e8ee;background:#fff;color:#0b0b0c;font-size:12px}
 
-  /* ▼▼▼ H1の改行制御（追加：PCは1行、スマホでだけ3行固定） ▼▼▼ */
-  .hero-title{ word-break: keep-all; white-space: nowrap; }
-  .hero-title .line{ display: inline; }
-  @media (max-width:520px){
-    .hero-title{ white-space: normal; }
-    .hero-title .line{ display: block; }
+  /* ▼ H1（PC/タブは自然折返し、スマホのみ3行固定） */
+  .hero-title{
+    white-space: normal;        /* 折返し許可（PC/タブは自然に1〜2行） */
+    word-break: normal;         /* 日本語の標準改行 */
+    overflow-wrap: anywhere;    /* どうしても入らない時の保険 */
+    text-wrap: balance;         /* 対応ブラウザで均等改行 */
   }
-  /* ▲▲▲ ここまで追記 ▲▲▲ */
+  .hero-title .line{ display: inline; }   /* PC/タブ：1行扱い */
+  @media (max-width:520px){
+    .hero-title .line{ display: block; }  /* スマホ：指定箇所で3行に固定 */
+  }
 </style>
 
 <!-- GA4 base tag: G-ZQNF698612 -->
@@ -122,13 +125,12 @@
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">OGAITO DANJIRI</p>
-        <!-- ▼ H1のみ差し替え（PC=1行 / スマホ=3行固定） -->
+        <!-- H1のみ改行制御を変更（PC/タブは自然折返し／スマホは3行固定） -->
         <h1 class="hero-title">
           <span class="line">小垣内だんじり祭りの</span>
           <span class="line">参拾人組にみんなが参加</span>
           <span class="line">できるようにしたい</span>
         </h1>
-        <!-- ▲ ここまで -->
         <div class="rule"></div>
         <div class="cta">
           <a class="btn primary" target="_blank" rel="noopener"
