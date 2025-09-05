@@ -94,7 +94,25 @@
   .final .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
   .links{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
   .tag{display:inline-flex;align-items:center;gap:8px;padding:.55em .9em;border-radius:999px;border:1px solid #e7e8ee;background:#fff;color:#0b0b0c;font-size:12px}
+
+  /* ▼▼▼ H1の改行制御（追加：PCは1行、スマホでだけ3行固定） ▼▼▼ */
+  .hero-title{ word-break: keep-all; white-space: nowrap; }
+  .hero-title .line{ display: inline; }
+  @media (max-width:520px){
+    .hero-title{ white-space: normal; }
+    .hero-title .line{ display: block; }
+  }
+  /* ▲▲▲ ここまで追記 ▲▲▲ */
 </style>
+
+<!-- GA4 base tag: G-ZQNF698612 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQNF698612"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-ZQNF698612', { anonymize_ip: true });
+</script>
 </head>
 <body>
 
@@ -104,13 +122,13 @@
     <div class="wrap">
       <div class="stack">
         <p class="eyebrow">OGAITO DANJIRI</p>
-        <h1 class="force-lines">
-  小垣内だんじり祭りの
-  <span class="br-sp"></span>
-  参拾人組にみんなが参加
-  <span class="br-sp"></span>
-  できるようにしたい
-</h1>
+        <!-- ▼ H1のみ差し替え（PC=1行 / スマホ=3行固定） -->
+        <h1 class="hero-title">
+          <span class="line">小垣内だんじり祭りの</span>
+          <span class="line">参拾人組にみんなが参加</span>
+          <span class="line">できるようにしたい</span>
+        </h1>
+        <!-- ▲ ここまで -->
         <div class="rule"></div>
         <div class="cta">
           <a class="btn primary" target="_blank" rel="noopener"
@@ -147,7 +165,7 @@
         <h1>寄付に対しての返礼品は？</h1>
         <div class="rule"></div>
         <h2>皆さまの貴重な応援をダイレクトに祭礼運営に生かすため、返礼品はありません<br>
-            そのかわりに、皆さまへの感謝を込めて、小垣内参拾人組が運営するYouTube総集編のエンドクレジットに<strong>ご希望のお名前</strong>を掲載させていただきます。(掲載なしも可)</h2>
+            そのかわりに、皆さまへの感謝を込めて、小倣内参拾人組が運営するYouTube総集編のエンドクレジットに<strong>ご希望のお名前</strong>を掲載させていただきます。(掲載なしも可)</h2>
       </div>
     </div>
   </section>
@@ -222,6 +240,42 @@
       </div>
     </div>
   </section>
+
+<!-- GA4 event tracking -->
+<script>
+(function(){
+  const fire=(name,params={})=>{
+    if (window.gtag) { gtag('event', name, params); }
+  };
+
+  // 寄付ボタンクリック計測（個人 / お店）
+  document.querySelectorAll('a[href*="checkout.square.site"]').forEach(a=>{
+    a.addEventListener('click', ()=>fire('donate_click',{ tier:'personal_500' }));
+  });
+  document.querySelectorAll('a[href*="square.link"]').forEach(a=>{
+    a.addEventListener('click', ()=>fire('donate_click',{ tier:'business_10000' }));
+  });
+
+  // SNSクリック（Instagram / YouTube）
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(a=>{
+    a.addEventListener('click', ()=>fire('social_click',{ dest:'instagram' }));
+  });
+  document.querySelectorAll('a[href*="youtube.com"]').forEach(a=>{
+    a.addEventListener('click', ()=>fire('social_click',{ dest:'youtube' }));
+  });
+
+  // セクション到達（60%可視で発火）
+  const io=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const id=e.target.id||'unknown';
+        fire('section_view',{ section:id });
+      }
+    });
+  },{threshold:0.6});
+  document.querySelectorAll('section[id]').forEach(sec=>io.observe(sec));
+})();
+</script>
 
 </body>
 </html>
